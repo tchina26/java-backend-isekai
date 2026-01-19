@@ -1,6 +1,5 @@
 package basics;
 
-import java.util.Objects;
 import java.util.UUID;
 
 final public class User {
@@ -12,7 +11,7 @@ final public class User {
         this.id = builder.id;
         this.name = builder.name;
         this.email = builder.email;
-    };
+    }
 
     public UUID getId() { return id; }
 
