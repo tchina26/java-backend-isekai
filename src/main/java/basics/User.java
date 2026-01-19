@@ -35,8 +35,12 @@ final public class User {
 
     @Override
     public String toString() {
-        String maskedEmail = email.replaceAll("(.{2}).*(@.*)", "$1***$2");
+        String maskedEmail = email.replaceAll("(.{2}).*(@.*)", "$1***$2"); // regex che oscura leggermente la email
         return "User{id=" + id + ", name=" + name + ", email=" + maskedEmail + "}";
+    }
+
+    public static User of(UUID id, String name, String email){
+        return new Builder().id(id).name(name).email(email).build();
     }
 
     public static class Builder{
@@ -69,7 +73,7 @@ final public class User {
             if(this.email == null || this.email.isBlank())
                 throw new IllegalArgumentException("email cant be empty or null");
 
-            String emailPattern = "^[\\w._%+-]+@[\\w.-]+\\.[A-Za-z]{2,}$"; // regex presa dal web per fare il check dell'email senza usare classi aggiuntive, per ora.
+            String emailPattern = "^[\\w._%+-]+@[\\w.-]+\\.[A-Za-z]{2,}$"; // regex presa dal web per fare il check dell'email senza usare classi aggiuntive, non valida perfettamente, per sempio permette email con 2 punti prima del dominio .
 
             if (!email.matches(emailPattern))
                 throw new IllegalArgumentException("invalid email format");
