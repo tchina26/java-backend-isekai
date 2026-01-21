@@ -73,7 +73,6 @@ final public class User {
                 throw new IllegalArgumentException("email cant be empty or null");
 
             String emailPattern = "^[\\w._%+-]+@[\\w.-]+\\.[A-Za-z]{2,}$"; // regex presa dal web per fare il check dell'email senza usare classi aggiuntive, non valida perfettamente, per sempio permette email con 2 punti prima del dominio .
-
             if (!email.matches(emailPattern))
                 throw new IllegalArgumentException("invalid email format");
 
