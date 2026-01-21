@@ -14,3 +14,6 @@ Day 2:
 Copie difensive → sicurezza dei dati(SafeList)
 Generics + wildcards 
 Streams + lambda
+
+Day 3:
+Ho consolidato il concetto di immutabilitá e di protezione dei dati esposti tramite la classe money e team.

@@ -75,7 +75,6 @@ public class Main {
         List<User> filteredUsers = users.stream()
                 .filter(s -> s.getName().contains("fr"))
                 .toList();
-
         filteredUsers.forEach(System.out::println);
     }
 }
