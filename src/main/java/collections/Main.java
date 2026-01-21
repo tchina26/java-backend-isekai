@@ -5,7 +5,6 @@ import basics.User;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -62,7 +61,7 @@ public class Main {
                 .filter(numb -> numb > 0)
                 .toList();
 
-        integers.forEach(s -> System.out.println(s));
+        integers.forEach(System.out::println);
 
         System.out.println("-------------------------------------------------------" +
                 "-------------------------------------------------------------");
@@ -74,9 +73,9 @@ public class Main {
         List<User> users = List.of(userA, userB, userC, userD, userE, userF);
 
         List<User> filteredUsers = users.stream()
-                .filter(s -> s.getName().contains("a"))
+                .filter(s -> s.getName().contains("fr"))
                 .toList();
 
-        filteredUsers.forEach(s -> System.out.println(s.toString()));
+        filteredUsers.forEach(System.out::println);
     }
 }
