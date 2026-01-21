@@ -8,3 +8,9 @@ ho preparato i primi 3 capitoli di effective java cercando di applicare le nozio
 
 -singletone
     non l'ho utilizzato ma permette un istanza sola, va usato solo e solamente se si é certi della necessitá, un caso utile potrebbe essere una classe util, o una classe che valida varii tipi di dati o un logger.
+
+
+Day 2:
+Copie difensive → sicurezza dei dati(SafeList)
+Generics + wildcards 
+Streams + lambda
