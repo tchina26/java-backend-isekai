@@ -13,6 +13,10 @@ final public class User {
         this.email = builder.email;
     }
 
+    public static User of(UUID id, String name, String email){
+        return new Builder().id(id).name(name).email(email).build();
+    }
+
     public UUID getId() { return id; }
 
     public String getName() { return name; }
@@ -21,10 +25,11 @@ final public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof User)) { // java 17 fa il check del null automaticamente con instanceof. su J17 con instanceof potresti creare un variabile direttamtente dopo il check con il pattern Matching
+        if (this == o) return true;
+        if (!(o instanceof User objectUser)) { // java 17 fa il check del null automaticamente con instanceof. su J17 con instanceof potresti creare un variabile direttamtente dopo il check con il pattern Matching
             return false;
         }
-        return id.equals(((User) o).id);
+        return id.equals(objectUser.id);
     }
 
     @Override
@@ -36,10 +41,6 @@ final public class User {
     public String toString() {
         String maskedEmail = email.replaceAll("(.{2}).*(@.*)", "$1***$2"); // regex che oscura leggermente la email
         return "User{id=" + id + ", name=" + name + ", email=" + maskedEmail + "}";
-    }
-
-    public static User of(UUID id, String name, String email){
-        return new Builder().id(id).name(name).email(email).build();
     }
 
     public static class Builder{

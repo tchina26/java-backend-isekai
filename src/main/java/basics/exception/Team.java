@@ -13,6 +13,9 @@ public class Team {
     }
     public static Team of(List<User> users){
         if(users == null) throw new NullPointerException("Users list cannot be null");
+        users.forEach(s-> {
+                    if(s==null) throw new NullPointerException("User cannot be null");
+                });
         return new Team(users);
     }
     public List<User> getAll(){
